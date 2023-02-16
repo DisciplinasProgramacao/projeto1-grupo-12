@@ -7,8 +7,8 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 * Giovanni Bogliolo Sirihal Duarte
 * Guilherme Drumond Silva
 * Pedro Ramos Vidigal
+* Rafael Ferraz Barra
 * Samuel Lincoln de Oliveira Gomes
-* Nome completo do aluno 4
 * Nome completo do aluno 4
 
 
