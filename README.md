@@ -9,7 +9,7 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 * Pedro Ramos Vidigal
 * Samuel Lincoln de Oliveira Gomes
 * Nome completo do aluno 4
-* Nome completo do aluno 4
+* Nome completo do aluno 4 teste
 
 
 ## Professores responsáveis
