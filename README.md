@@ -5,7 +5,7 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 ## Alunos integrantes da equipe
 
 * Giovanni Bogliolo Sirihal Duarte
-* Guilherme Drumond Silva
+* Guilherme Drumond Silv
 * Pedro Ramos Vidigal
 * Samuel Lincoln de Oliveira Gomes
 * Nome completo do aluno 4
