@@ -8,9 +8,8 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 * Guilherme Drumond Silva
 * Pedro Ramos Vidigal
 * Samuel Lincoln de Oliveira Gomes
+* Rafael Ferraz Barra
 * Nome completo do aluno 4
-* Nome completo do aluno 4
-aaa
 
 ## Professores responsáveis
 
