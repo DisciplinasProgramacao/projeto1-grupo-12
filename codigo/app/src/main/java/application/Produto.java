@@ -16,10 +16,6 @@ public class Produto {
         this.margemLucro = margemLucro;
     }
 
-    public Produto() {
-        
-    }
-
     public String getDescricao() {
         return descricao;
     }
@@ -48,12 +44,8 @@ public class Produto {
         return quantidadeEstoque;
     }
 
-    public void addQuantidadeEstoque(int quantidade) {
-        this.quantidadeEstoque += quantidade;
-    }
-
-    public void removeQuantidadeEstoque(int quantidade) {
-        this.quantidadeEstoque -= quantidade;
+    public void setQuantidadeEstoque(int quantidadeEstoque) {
+        this.quantidadeEstoque = quantidadeEstoque;
     }
 
     public float getMargemLucro() {
@@ -83,7 +75,13 @@ public class Produto {
 
     public boolean qtdEmEstoqueAbaixo(int qtdMinima){
 
-        return (qtdMinima < quantidadeEstoque);
+        if(qtdMinima < quantidadeEstoque){
+            return false;
+        }else{
+            return true;
+        }
+
+
     }
 
 
