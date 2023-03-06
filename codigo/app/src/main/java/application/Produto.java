@@ -1,11 +1,13 @@
 package application;
 
+
 public class Produto {
     private String descricao;
     private float precoCusto;
     private float precoVenda;
     private int quantidadeEstoque;
     private float margemLucro;
+    private static int minEstoque = 5;
 
 
     public Produto(String descricao, float precoCusto, float precoVenda, int quantidadeEstoque, float margemLucro){
@@ -81,10 +83,9 @@ public class Produto {
         return (porcentImposto * (this.precoCusto + this.margemLucro));
     }
 
-    public boolean qtdEmEstoqueAbaixo(int qtdMinima){
+    public boolean qtdEmEstoqueAbaixo(){
 
-        return (qtdMinima < quantidadeEstoque);
+        return (quantidadeEstoque < minEstoque);
     }
-
 
 }
