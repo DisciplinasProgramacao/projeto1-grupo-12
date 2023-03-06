@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 /**
  * Unit test for simple App.
  */
-class AppTest {
+class EstoqueTest {
 
     private Estoque e;
     private Produto p1, p2, p3, p4;
