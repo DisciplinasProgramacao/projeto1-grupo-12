@@ -3,19 +3,21 @@ package application;
 
 public class Produto {
     private String descricao;
-    private float precoCusto;
-    private float precoVenda;
+    private double precoCusto;
+    private double precoVenda;
     private int quantidadeEstoque;
-    private float margemLucro;
+    private double margemLucro;
     private static int minEstoque = 5;
+    private double imposto; 
 
 
-    public Produto(String descricao, float precoCusto, float precoVenda, int quantidadeEstoque, float margemLucro){
+    public Produto(String descricao, double precoCusto, double precoVenda, int quantidadeEstoque, double margemLucro){
         this.descricao = descricao;
         this.precoCusto = precoCusto;
         this.precoVenda = precoVenda;
         this.quantidadeEstoque = quantidadeEstoque;
         this.margemLucro = margemLucro;
+        this.imposto = imposto;
     }
 
     public Produto() {
@@ -30,19 +32,27 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public float getPrecoCusto() {
+    public double getImposto() {
+        return imposto;
+    }
+
+    public void setImposto(double imposto) {
+        this.imposto = imposto;
+    }
+
+    public double getPrecoCusto() {
         return precoCusto;
     }
 
-    public void setPrecoCusto(float precoCusto) {
+    public void setPrecoCusto(double precoCusto) {
         this.precoCusto = precoCusto;
     }
 
-    public float getPrecoVenda() {
+    public double getPrecoVenda() {
         return precoVenda;
     }
 
-    public void setPrecoVenda(float precoVenda) {
+    public void setPrecoVenda(double precoVenda) {
         this.precoVenda = precoVenda;
     }
 
@@ -58,29 +68,30 @@ public class Produto {
         this.quantidadeEstoque -= quantidade;
     }
 
-    public float getMargemLucro() {
+    public double getMargemLucro() {
         return margemLucro;
     }
 
-    public void setMargemLucro(float margemLucro) {
+    public void setMargemLucro(double margemLucro) {
         this.margemLucro = margemLucro;
     }
 
-    public float calcPrecoVenda(int vImposto){
+    public double calcPrecoVenda(int vImposto){
         
         this.precoVenda = precoCusto + margemLucro + vImposto;
         return precoVenda;
     }
 
-    public float calcMargemLucro(float porcentLucro){
+    public double calcMargemLucro(double porcentLucro){
 
         this.margemLucro = porcentLucro * precoCusto;
         return margemLucro;
     }
 
-    public float calcImposto(float porcentImposto){
+    public double calcImposto(double porcentImposto){
 
-        return (porcentImposto * (this.precoCusto + this.margemLucro));
+        this.imposto = porcentImposto * (this.precoCusto + this.margemLucro);
+        return imposto;
     }
 
     public boolean qtdEmEstoqueAbaixo(){
