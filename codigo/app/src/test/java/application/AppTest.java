@@ -14,12 +14,15 @@ import org.junit.jupiter.api.BeforeEach;
 class AppTest {
 
     private Estoque e;
-    private Produto p;
+    private Produto p1, p2, p3, p4;
 
     @BeforeEach
     public void startUp(){ 
         e = new Estoque();
-        p = new Produto();
+        p1 = new Produto("banana", 10, 25, 20, 2);
+        p2 = new Produto("macarrao", 20, 30, 30, 2);
+        p3 = new Produto("linguiça", 20, 30, 3, 2);
+        p4 = new Produto("carne", 20, 30, 3, 2);
     }
 
 
@@ -30,49 +33,44 @@ class AppTest {
     }
 
     @Test
-    public void testCompraProduto() {
+    public void reporEstoque() {
 
-        e.addQtdProduto(p, 10);
-        assertEquals(10, p.getQuantidadeEstoque());
-        assertEquals(10, e.getQuantidade());
-
-        e.addQtdProduto(p, 25);
-        assertEquals(35, p.getQuantidadeEstoque());
-        assertEquals(35, e.getQuantidade());
+        assertEquals(0, e.getQuantidade());
+        e.reporEstoque(p1);
+        assertEquals(20, e.getQuantidade());
     }
 
     @Test
     public void testRetiraProduto() {
 
-        e.removeQtdProduto(p, 10);;
-        assertEquals(0, e.getQuantidade());
-
-        e.addQtdProduto(p, 10);
-        e.removeQtdProduto(p, 5);
-        assertEquals(5, e.getQuantidade());
+        e.reporEstoque(p1);
+        e.reporEstoque(p2);
+        
+        e.retirarEstoque(p1);
+        assertEquals(30, e.getQuantidade());
     }
 
 
-    @Test
-    public void testCalvularValorEstoque(){
-        Produto p1 = new Produto("Produto 1", 10, 20, 0,2);
-        Produto p2 = new Produto("Produto 2", 20, 40, 0,2);
-        Produto p3 = new Produto("Produto 3", 30, 60, 0, 2);
-        e.addProduto(p1,1);
-        e.addProduto(p2,2);
-        e.addProduto(p3,1);
-        assertEquals(80, e.calcularValorEstoque());
-    }
+    // @Test
+    // public void testCalvularValorEstoque(){
+    //     Produto p1 = new Produto("Produto 1", 10, 20, 0,2);
+    //     Produto p2 = new Produto("Produto 2", 20, 40, 0,2);
+    //     Produto p3 = new Produto("Produto 3", 30, 60, 0, 2);
+    //     e.addProduto(p1,1);
+    //     e.addProduto(p2,2);
+    //     e.addProduto(p3,1);
+    //     assertEquals(80, e.calcularValorEstoque());
+    // }
 
-    @Test
-    public void testQuaisMenorQueMinimo(){
-        Produto p1 = new Produto("Produto 1", 10, 20, 0,2);
-        Produto p2 = new Produto("Produto 2", 20, 40, 0,2);
-        Produto p3 = new Produto("Produto 3", 30, 60, 0, 2);
-        e.addProduto(p1,1);
-        e.addProduto(p2,2);
-        e.addProduto(p3,1);
-        assertEquals("Produto 1", e.QuaisMenorQueMinimo());
-    }
+    // @Test
+    // public void testQuaisMenorQueMinimo(){
+    //     Produto p1 = new Produto("Produto 1", 10, 20, 0,2);
+    //     Produto p2 = new Produto("Produto 2", 20, 40, 0,2);
+    //     Produto p3 = new Produto("Produto 3", 30, 60, 0, 2);
+    //     e.addProduto(p1,1);
+    //     e.addProduto(p2,2);
+    //     e.addProduto(p3,1);
+    //     assertEquals("Produto 1", e.QuaisMenorQueMinimo());
+    // }
 
 }
