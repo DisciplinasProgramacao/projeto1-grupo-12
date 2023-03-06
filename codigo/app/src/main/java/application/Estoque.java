@@ -1,9 +1,14 @@
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Estoque {
 
     private Produto produto;
     private int quantidadeEstoque;
+    private List<Produto> produtos = new ArrayList<>();
+    private List<Integer> quantidades = new ArrayList<>();
 
     public Estoque(int quantidadeEstoque) {
         
@@ -14,9 +19,18 @@ public class Estoque {
         this.quantidadeEstoque = 0;
     }
 
-    public void addProduto(Produto produto) {
-        
-        this.produto = produto;
+    public void addProduto(Produto produto, int quantidade) {
+        if (!produtos.contains(produto)) {
+            produtos.add(produto);
+            quantidades.add(quantidade);
+            addQtdProduto(produto, quantidade);
+        } 
+        else {
+            int index = produtos.indexOf(produto);
+            int novaQuantidade = quantidades.get(index) + quantidade;
+            quantidades.set(index, novaQuantidade);
+            addQtdProduto(produto, quantidade);
+        }
     }
 
     public int getQuantidade() {
@@ -33,11 +47,29 @@ public class Estoque {
     }
 
     public void addQtdProduto(Produto produto, int qtd ) {
-
         produto.addQuantidadeEstoque(qtd);
         this.quantidadeEstoque += qtd; 
     }
 
+    public double calcularValorEstoque() {
+        double valorTotal = 0;
+        for (int i = 0; i < produtos.size(); i++) {
+            Produto produto = produtos.get(i);
+            int quantidade = quantidades.get(i);
+            valorTotal += produto.getPrecoCusto() * quantidade;
+        }
+        return valorTotal;
+    }
 
+    public String QuaisMenorQueMinimo(){
+        String menor = "Nenhum";
+        for (int i = 0; i < produtos.size(); i++) {
+            if(produto.qtdEmEstoqueAbaixo(0)){
+                menor = produto.getDescricao();
+            }
+        }
+        return menor;
+    }
+        
 
 }
