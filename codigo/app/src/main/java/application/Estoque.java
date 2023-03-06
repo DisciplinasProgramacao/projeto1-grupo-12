@@ -42,11 +42,11 @@ public class Estoque {
 
     public List QuaisMenorQueMinimo(){
 
-        List<Produto> produtosAbaixoDoEstoque = new ArrayList<>();
+        List<String> produtosAbaixoDoEstoque = new ArrayList<>();
 
         for (int i = 0; i < produtosList.size(); i++) {
             if(produtosList.get(i).qtdEmEstoqueAbaixo()){
-                produtosAbaixoDoEstoque.add(produtosList.get(i));
+                produtosAbaixoDoEstoque.add(produtosList.get(i).getDescricao());
             }
         }
 
