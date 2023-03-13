@@ -8,9 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 
-/**
- * Unit test for simple App.
- */
+
 class EstoqueTest {
 
     private Estoque e;

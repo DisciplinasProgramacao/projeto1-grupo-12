@@ -6,6 +6,8 @@ import java.util.List;
 public class Estoque {
 
     private List<Produto> produtosList = new ArrayList<>();
+    private static float valorVendido;
+    private static float valorGasto;
 
     
 
@@ -58,6 +60,19 @@ public class Estoque {
         for(int i=0; i < produtosList.size(); i++){
             System.out.println("Produto " + i + ": " + produtosList.get(i).getDescricao());
         } 
-    }   
+    } 
+    
+    public void imprimirEst() {
+
+    }
+
+    public void consultarProduto(String pesquisa){
+
+        for(int i = 0; i < produtosList.size(); i++){
+            if(produtosList.get(i).getDescricao().contains(pesquisa)){
+                produtosList.get(i).imprimirProduto();
+            }
+        }
+    }
 
 }

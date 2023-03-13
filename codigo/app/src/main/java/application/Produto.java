@@ -1,6 +1,5 @@
 package application;
 
-
 public class Produto {
     private String descricao;
     private double precoCusto;
@@ -8,10 +7,9 @@ public class Produto {
     private int quantidadeEstoque;
     private double margemLucro;
     private static int minEstoque = 5;
-    private double imposto; 
+    private double imposto;
 
-
-    public Produto(String descricao, double precoCusto, double precoVenda, int quantidadeEstoque, double margemLucro){
+    public Produto(String descricao, double precoCusto, double precoVenda, int quantidadeEstoque, double margemLucro) {
         this.descricao = descricao;
         this.precoCusto = precoCusto;
         this.precoVenda = precoVenda;
@@ -21,7 +19,7 @@ public class Produto {
     }
 
     public Produto() {
-        
+
     }
 
     public String getDescricao() {
@@ -76,27 +74,35 @@ public class Produto {
         this.margemLucro = margemLucro;
     }
 
-    public double calcPrecoVenda(int vImposto){
-        
+    public double calcPrecoVenda(int vImposto) {
+
         this.precoVenda = precoCusto + margemLucro + vImposto;
         return precoVenda;
     }
 
-    public double calcMargemLucro(double porcentLucro){
+    public double calcMargemLucro(double porcentLucro) {
 
         this.margemLucro = porcentLucro * precoCusto;
         return margemLucro;
     }
 
-    public double calcImposto(double porcentImposto){
+    public double calcImposto(double porcentImposto) {
 
         this.imposto = porcentImposto * (this.precoCusto + this.margemLucro);
         return imposto;
     }
 
-    public boolean qtdEmEstoqueAbaixo(){
+    public boolean qtdEmEstoqueAbaixo() {
 
         return (quantidadeEstoque < minEstoque);
+    }
+
+    public void imprimirProduto(){
+        System.out.println("Descrição: " + this.descricao);
+        System.out.println("Preço de Custo: " + this.precoCusto);
+        System.out.println("Preço de Venda: " + this.precoVenda);
+        System.out.println("Quantidade Estoque: " + this.quantidadeEstoque);
+        System.out.println("Margem de lucro: " + this.margemLucro);
     }
 
 }
