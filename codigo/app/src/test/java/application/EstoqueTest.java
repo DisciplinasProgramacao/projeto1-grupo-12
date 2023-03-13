@@ -8,7 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 
-
+/**
+ * Unit test for simple App.
+ */
 class EstoqueTest {
 
     private Estoque e;
@@ -31,19 +33,19 @@ class EstoqueTest {
     }
 
     @Test
-    public void reporEstoque() {
+    public void addEstoque() {
 
         assertEquals(0, e.getQuantidade());
-        e.reporEstoque(p1);
+        e.addEstoque(p1);
         assertEquals(20, e.getQuantidade());
     }
 
     @Test
     public void testRetiraProduto() {
 
-        e.reporEstoque(p1);
-        e.reporEstoque(p2);
-        
+        e.addEstoque(p1);
+        e.addEstoque(p2);
+
         e.retirarEstoque(p1);
         assertEquals(30, e.getQuantidade());
     }
@@ -54,9 +56,9 @@ class EstoqueTest {
          Produto p1 = new Produto("Produto 1", 10, 20, 1,2);
          Produto p2 = new Produto("Produto 2", 20, 40, 2,2);
          Produto p3 = new Produto("Produto 3", 30, 60, 1, 2);
-         e.reporEstoque(p1);
-         e.reporEstoque(p2);
-         e.reporEstoque(p3);
+         e.addEstoque(p1);
+         e.addEstoque(p2);
+         e.addEstoque(p3);
          assertEquals(80, e.calcularValorEstoque());
      }
 
@@ -65,9 +67,9 @@ class EstoqueTest {
          Produto p1 = new Produto("Produto 1", 10, 20, 0,2);
          Produto p2 = new Produto("Produto 2", 20, 40, 6,2);
          Produto p3 = new Produto("Produto 3", 30, 60, 3, 2);
-         e.reporEstoque(p1);
-         e.reporEstoque(p2);
-         e.reporEstoque(p3);
+         e.addEstoque(p1);
+         e.addEstoque(p2);
+         e.addEstoque(p3);
          assertEquals("[Produto 1, Produto 3]", e.QuaisMenorQueMinimo().toString());
      }
 

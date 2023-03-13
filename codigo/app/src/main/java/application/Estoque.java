@@ -21,7 +21,7 @@ public class Estoque {
         return qtd;
     }
 
-    public void reporEstoque(Produto produto){
+    public void addEstoque(Produto produto){
         if (!produtosList.contains(produto)) {
             produtosList.add(produto);
         } 
@@ -61,16 +61,21 @@ public class Estoque {
             System.out.println("Produto " + i + ": " + produtosList.get(i).getDescricao());
         } 
     } 
-    
-    public void imprimirEst() {
-
-    }
 
     public void consultarProduto(String pesquisa){
 
         for(int i = 0; i < produtosList.size(); i++){
             if(produtosList.get(i).getDescricao().contains(pesquisa)){
                 produtosList.get(i).imprimirProduto();
+            }
+        }
+    }
+
+    public void vendaQuantProd(String pesquisa, int quant){
+
+        for(int i = 0; i < produtosList.size(); i++){
+            if(produtosList.get(i).getDescricao().contains(pesquisa)){
+                produtosList.get(i).removeQuantidadeEstoque(quant);
             }
         }
     }
