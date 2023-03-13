@@ -12,8 +12,8 @@ public final class App {
         Produto p2 = new Produto("macarrao", 20, 30, 30, 2);
         
 
-        e.reporEstoque(p1);
-        e.reporEstoque(p2);
+        e.addEstoque(p1);
+        e.addEstoque(p2);
 
         Menu();
 
@@ -39,7 +39,7 @@ public final class App {
                 break;
     
                 case 1:
-    
+                SubMenu1();
                 break;
     
                 case 2:
@@ -56,6 +56,42 @@ public final class App {
             }
         }while(x != 0);
         
+    }
+
+
+    public static void SubMenu1(){
+        int x;
+            System.out.println("Você gostaria de:");
+            System.out.println("1 --> Vender produtos;");
+            System.out.println("2 --> Comprar produtos;");
+
+            x = entrada.nextInt();
+            switch (x){
+                case 1:
+                Venda();
+                break;
+
+                case 2:
+
+                break;
+
+                default:
+                System.out.println("Número inválido.");
+            }
+    }
+
+    public static void Venda(){
+        int quant;
+        String prod;
+
+        System.out.println("Digite o nome do produto que deseja vender:");
+        entrada.nextLine(); 
+        prod = entrada.nextLine();
+
+        System.out.println("Quanto é a quantidade dessa venda?");
+        quant = entrada.nextInt();
+
+        e.vendaQuantProd(prod, quant);
     }
 
     public static void consultarProduto(){
