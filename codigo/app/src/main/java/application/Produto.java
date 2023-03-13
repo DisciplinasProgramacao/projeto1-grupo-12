@@ -97,7 +97,7 @@ public class Produto {
         return (quantidadeEstoque < minEstoque);
     }
 
-    public void imprimirProduto(){
+    public void imprimirProduto() {
         System.out.println("Descrição: " + this.descricao);
         System.out.println("Preço de Custo: " + this.precoCusto);
         System.out.println("Preço de Venda: " + this.precoVenda);
