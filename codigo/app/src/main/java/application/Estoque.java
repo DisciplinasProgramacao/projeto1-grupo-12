@@ -9,13 +9,13 @@ public class Estoque {
     private static double valorVendido = 0;
     private static double valorGasto = 0;
 
-    public void setValorGasto(double valor){
-        valorGasto+= valor;
-    }
-    public void setValorVendido(double valor){
-        valorVendido+= valor;
+    public void setValorGasto(double valor) {
+        valorGasto += valor;
     }
 
+    public void setValorVendido(double valor) {
+        valorVendido += valor;
+    }
 
     public int getQuantidade() {
         int qtd = 0;
@@ -81,6 +81,7 @@ public class Estoque {
 
         for (int i = 0; i < produtosList.size(); i++) {
             if (produtosList.get(i).getDescricao().contains(pesquisa)) {
+                if((produtosList.get(i).getQuantidadeEstoque()) - quant > 0)
                 produtosList.get(i).removeQuantidadeEstoque(quant);
                 setValorVendido(produtosList.get(i).getPrecoVenda());
             }
