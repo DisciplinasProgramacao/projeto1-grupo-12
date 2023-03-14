@@ -74,29 +74,51 @@ public class Produto {
         this.margemLucro = margemLucro;
     }
 
+    /**
+     * calcula e retorna o preço de venda
+     * @param vImposto
+     * @return
+     */
     public double calcPrecoVenda(int vImposto) {
 
         this.precoVenda = precoCusto + margemLucro + vImposto;
         return precoVenda;
     }
 
+    /**
+     * calcula e retorna a margem de lucro
+     * @param porcentLucro
+     * @return
+     */
     public double calcMargemLucro(double porcentLucro) {
 
         this.margemLucro = porcentLucro * precoCusto;
         return margemLucro;
     }
 
+    /**
+     * calcula e retorna o imposto
+     * @param porcentImposto
+     * @return
+     */
     public double calcImposto(double porcentImposto) {
 
         this.imposto = porcentImposto * (this.precoCusto + this.margemLucro);
         return imposto;
     }
 
+    /**
+     * retorna t/f se o produto está com a quantidade abaixo do minimo preposto
+     * @return
+     */
     public boolean qtdEmEstoqueAbaixo() {
 
         return (quantidadeEstoque < minEstoque);
     }
 
+    /**
+     * 
+     */
     public void imprimirProduto() {
         System.out.println("Descrição: " + this.descricao);
         System.out.println("Preço de Custo: " + this.precoCusto);
