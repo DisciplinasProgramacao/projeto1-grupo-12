@@ -122,4 +122,18 @@ public class Estoque {
         }
     }
 
+/**
+     * Adiciona uma quantidade específica dos produtos que tem a quantidade abaixo do mínimo, no estoque
+     * @param quantidade
+     */
+    public void comprar(int quantidade) {
+
+        List<Produto> produtosAbaixoDoEstoque;
+        produtosAbaixoDoEstoque = QuaisMenorQueMinimo();
+        for (int i = 0; i < produtosAbaixoDoEstoque.size(); i++) {
+            produtosAbaixoDoEstoque.get(i).addQuantidadeEstoque(quantidade);
+            setValorGasto(produtosAbaixoDoEstoque.get(i).getPrecoCusto() * quantidade);
+        }
+    }
+
 }
