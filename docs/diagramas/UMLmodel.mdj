@@ -61,7 +61,7 @@
 											"font": "Arial;13;1",
 											"left": 653,
 											"top": 319,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
 											"text": "Produto"
 										},
@@ -96,7 +96,7 @@
 									"font": "Arial;13;0",
 									"left": 648,
 									"top": 312,
-									"width": 253.9150390625,
+									"width": 300.8876953125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGGmZjDDsIOib0="
@@ -133,7 +133,7 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 342,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
 											"text": "-descricao: String",
 											"horizontalAlignment": 0
@@ -150,9 +150,9 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 357,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
-											"text": "-precoCusto: float",
+											"text": "-precoCusto: double",
 											"horizontalAlignment": 0
 										},
 										{
@@ -167,9 +167,9 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 372,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
-											"text": "-precoVenda: float",
+											"text": "-precoVenda: double",
 											"horizontalAlignment": 0
 										},
 										{
@@ -184,7 +184,7 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 387,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
 											"text": "-quantidadeEstoque: int",
 											"horizontalAlignment": 0
@@ -201,9 +201,9 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 402,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
-											"text": "-margemLucro: float",
+											"text": "-margemLucro: double",
 											"horizontalAlignment": 0
 										},
 										{
@@ -218,7 +218,7 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 417,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
 											"text": "-minEstoque: int",
 											"horizontalAlignment": 0
@@ -235,7 +235,7 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 432,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
 											"text": "-imposto: double",
 											"horizontalAlignment": 0
@@ -244,7 +244,7 @@
 									"font": "Arial;13;0",
 									"left": 648,
 									"top": 337,
-									"width": 253.9150390625,
+									"width": 300.8876953125,
 									"height": 113
 								},
 								{
@@ -269,9 +269,9 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 455,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
-											"text": "+calcPrecoVenda(): float",
+											"text": "+calcPrecoVenda(vImposto: int): double",
 											"horizontalAlignment": 0
 										},
 										{
@@ -286,9 +286,9 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 470,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
-											"text": "+calcMargemLucro(): float",
+											"text": "+calcMargemLucro(porcentLucro: double): double",
 											"horizontalAlignment": 0
 										},
 										{
@@ -303,9 +303,9 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 485,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
-											"text": "+calcImposto(): float",
+											"text": "+calcImposto(): double",
 											"horizontalAlignment": 0
 										},
 										{
@@ -320,7 +320,7 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 500,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
 											"text": "+qtdEmEstoqueAbaixo(): boolean",
 											"horizontalAlignment": 0
@@ -337,9 +337,9 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 515,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
-											"text": "+addQuantidadeEstoque(): int",
+											"text": "+addQuantidadeEstoque(quantidade: int): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -354,9 +354,9 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 530,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
-											"text": "+removeQuantidadeEstoque(): int",
+											"text": "+removeQuantidadeEstoque(quantidade: int): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -371,17 +371,34 @@
 											"font": "Arial;13;0",
 											"left": 653,
 											"top": 545,
-											"width": 243.9150390625,
+											"width": 290.8876953125,
 											"height": 13,
-											"text": "+imprimirProduto(): void",
+											"text": "+imprimirProduto(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGG4bYMZPt2ZUw=",
+											"_parent": {
+												"$ref": "AAAAAAGGmZjDD8ITzXQ="
+											},
+											"model": {
+												"$ref": "AAAAAAGG4bYMXftz4v0="
+											},
+											"font": "Arial;13;0",
+											"left": 653,
+											"top": 560,
+											"width": 290.8876953125,
+											"height": 13,
+											"text": "+valorNoEstoque(): double",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 648,
 									"top": 450,
-									"width": 253.9150390625,
-									"height": 113
+									"width": 300.8876953125,
+									"height": 128
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -420,8 +437,8 @@
 							"containerChangeable": true,
 							"left": 648,
 							"top": 312,
-							"width": 253.9150390625,
-							"height": 251,
+							"width": 300.8876953125,
+							"height": 266,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGmZjDDsINafU="
 							},
@@ -725,7 +742,7 @@
 											"top": 823,
 											"width": 299.5458984375,
 											"height": 13,
-											"text": "+imprimirEstoque(): void",
+											"text": "+imprimirEstoque(): String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -742,7 +759,7 @@
 											"top": 838,
 											"width": 299.5458984375,
 											"height": 13,
-											"text": "+consultarProduto(pesquisa: String): void",
+											"text": "+consultarProduto(pesquisa: String): Produto",
 											"horizontalAlignment": 0
 										},
 										{
@@ -761,13 +778,30 @@
 											"height": 13,
 											"text": "+vendaQuantProd(pesquisa: String, quant: int): void",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGG4be2HfyQwEk=",
+											"_parent": {
+												"$ref": "AAAAAAGG3IBPh6iNb2E="
+											},
+											"model": {
+												"$ref": "AAAAAAGG4be2FPyN45M="
+											},
+											"font": "Arial;13;0",
+											"left": 653,
+											"top": 868,
+											"width": 299.5458984375,
+											"height": 13,
+											"text": "+comprar(quantidade: int): void",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 648,
 									"top": 758,
 									"width": 309.5458984375,
-									"height": 113
+									"height": 128
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -807,7 +841,7 @@
 							"left": 648,
 							"top": 680,
 							"width": 309.5458984375,
-							"height": 201,
+							"height": 206,
 							"nameCompartment": {
 								"$ref": "AAAAAAGG3IBPh6iHWOA="
 							},
@@ -846,7 +880,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 713,
-									"top": 614,
+									"top": 621,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -867,7 +901,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 698,
-									"top": 614,
+									"top": 621,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -888,7 +922,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 742,
-									"top": 615,
+									"top": 622,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -972,7 +1006,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 713,
-									"top": 581,
+									"top": 596,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -992,7 +1026,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 699,
-									"top": 584,
+									"top": 599,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -1012,7 +1046,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 740,
-									"top": 577,
+									"top": 592,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -1060,7 +1094,7 @@
 							"tail": {
 								"$ref": "AAAAAAGG3IBPh6iGU1c="
 							},
-							"points": "728:680;728:562",
+							"points": "728:680;728:577",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGG3Wi+0bHrt7U="
@@ -1118,7 +1152,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 728,
-							"top": 568,
+							"top": 576,
 							"width": 60,
 							"height": 25,
 							"text": "0..*"
@@ -1151,7 +1185,7 @@
 							},
 							"name": "precoCusto",
 							"visibility": "private",
-							"type": "float"
+							"type": "double"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1161,7 +1195,7 @@
 							},
 							"name": "precoVenda",
 							"visibility": "private",
-							"type": "float"
+							"type": "double"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1181,7 +1215,7 @@
 							},
 							"name": "margemLucro",
 							"visibility": "private",
-							"type": "float"
+							"type": "double"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1219,8 +1253,17 @@
 									"_parent": {
 										"$ref": "AAAAAAGGmZqrA8JiLZ4="
 									},
-									"type": "float",
+									"type": "double",
 									"direction": "return"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGG4bLxpfplneY=",
+									"_parent": {
+										"$ref": "AAAAAAGGmZqrA8JiLZ4="
+									},
+									"name": "vImposto",
+									"type": "int"
 								}
 							]
 						},
@@ -1238,8 +1281,17 @@
 									"_parent": {
 										"$ref": "AAAAAAGGmZr3icJrYbo="
 									},
-									"type": "float",
+									"type": "double",
 									"direction": "return"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGG4bNQbvq98fE=",
+									"_parent": {
+										"$ref": "AAAAAAGGmZr3icJrYbo="
+									},
+									"name": "porcentLucro",
+									"type": "double"
 								}
 							]
 						},
@@ -1257,7 +1309,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGGmZtKHcJ02N8="
 									},
-									"type": "float",
+									"type": "double",
 									"direction": "return"
 								}
 							]
@@ -1295,8 +1347,17 @@
 									"_parent": {
 										"$ref": "AAAAAAGG3HnbB6e1SKg="
 									},
-									"type": "int",
+									"type": "void",
 									"direction": "return"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGG4bH37vlc/3E=",
+									"_parent": {
+										"$ref": "AAAAAAGG3HnbB6e1SKg="
+									},
+									"name": "quantidade",
+									"type": "int"
 								}
 							]
 						},
@@ -1314,8 +1375,17 @@
 									"_parent": {
 										"$ref": "AAAAAAGG3Ho89ae+nX4="
 									},
-									"type": "int",
+									"type": "void",
 									"direction": "return"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGG4bJyEfoT2Io=",
+									"_parent": {
+										"$ref": "AAAAAAGG3Ho89ae+nX4="
+									},
+									"name": "quantidade",
+									"type": "int"
 								}
 							]
 						},
@@ -1333,7 +1403,26 @@
 									"_parent": {
 										"$ref": "AAAAAAGG3HqyMafHFrE="
 									},
-									"type": "void",
+									"type": "String",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGG4bYMXftz4v0=",
+							"_parent": {
+								"$ref": "AAAAAAGGmZjDDcIKXUA="
+							},
+							"name": "valorNoEstoque",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGG4bYrpPuw3bg=",
+									"_parent": {
+										"$ref": "AAAAAAGG4bYMXftz4v0="
+									},
+									"type": "double",
 									"direction": "return"
 								}
 							]
@@ -1539,7 +1628,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGG3UbBtakT0Kk="
 									},
-									"type": "void",
+									"type": "String",
 									"direction": "return"
 								}
 							]
@@ -1567,7 +1656,9 @@
 									"_parent": {
 										"$ref": "AAAAAAGG3Ub73KkcDFY="
 									},
-									"type": "void",
+									"type": {
+										"$ref": "AAAAAAGGmZjDDcIKXUA="
+									},
 									"direction": "return"
 								}
 							]
@@ -1603,6 +1694,34 @@
 									"_id": "AAAAAAGG3UnjwKk1xcA=",
 									"_parent": {
 										"$ref": "AAAAAAGG3UmO3aksEGY="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGG4be2FPyN45M=",
+							"_parent": {
+								"$ref": "AAAAAAGG3IBPh6iE2Rs="
+							},
+							"name": "comprar",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGG4bfgGPy+9J8=",
+									"_parent": {
+										"$ref": "AAAAAAGG4be2FPyN45M="
+									},
+									"name": "quantidade",
+									"type": "int"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGG4bfgGPy/lIw=",
+									"_parent": {
+										"$ref": "AAAAAAGG4be2FPyN45M="
 									},
 									"type": "void",
 									"direction": "return"
