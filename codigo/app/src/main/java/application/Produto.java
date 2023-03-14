@@ -58,12 +58,20 @@ public class Produto {
         return margemLucro;
     }
 
+    /**
+     * adiciona a quantidade no produto
+     * @param quantidade
+     */
     public void addQuantidadeEstoque(int quantidade) {
         if(quantidade > 0) {
             this.quantidadeEstoque += quantidade;
         }
     }
 
+    /**
+     * remove a quantidade do produto, se a quantidade total no final for maior ou igual a 0
+     * @param quantidade
+     */
     public void removeQuantidadeEstoque(int quantidade) {
         if((quantidade>0) && (quantidade <= this.quantidadeEstoque)){
             this.quantidadeEstoque -= quantidade;
@@ -120,7 +128,8 @@ public class Produto {
     }
 
     /**
-     * 
+     * retorna todos os dados de um produto
+     * @return
      */
     public String imprimirProduto() {
 
@@ -132,6 +141,10 @@ public class Produto {
         return result;
     }
 
+    /**
+     * retorna o valor contido no estoque
+     * @return
+     */
     public double valorNoEstoque() {
         return (this.precoCusto*this.quantidadeEstoque);
     }

@@ -90,7 +90,10 @@ public class Estoque {
         return produtosAbaixoDoEstoque;
     }
 
-    
+    /**
+     * Retorna as descrições de todos os produtos dentro do estoque
+     * @return
+     */
     public String imprimirEstoque() {
 
         String produtosEstoque = "";
@@ -135,7 +138,7 @@ public class Estoque {
         }
     }
 
-/**
+    /**
      * Adiciona uma quantidade específica dos produtos que tem a quantidade abaixo do mínimo, no estoque
      * @param quantidade
      */
