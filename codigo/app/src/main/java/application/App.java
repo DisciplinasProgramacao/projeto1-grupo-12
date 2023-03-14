@@ -42,7 +42,7 @@ public final class App {
                     break;
 
                 case 3:
-
+                    submen
                     break;
 
                 default:
@@ -97,6 +97,35 @@ public final class App {
 
     }
 
+    public static void SubMenu3() {
+        int x;
+
+        System.out.println("Escolha o que quer fazer:");
+        System.out.println("1 --> Consultar valor do estoque;");
+        System.out.println("2 --> Consultar valor vendido;");
+        System.out.println("3 --> Consultar valor gasto para reposição;");
+    
+        x = entrada.nextInt();
+        switch (x) {
+            case 1:
+                valorEstoque();
+
+                break;
+
+            case 2:
+                valorVendido();
+                break;
+
+            case 3:
+                valorGasto();
+                break;
+
+            default:
+                System.out.println("Número inválido.");
+        }
+    
+    }
+    
     public static void Venda() {
         int quant;
         String prod;
@@ -137,6 +166,18 @@ public final class App {
 
     public static void consultarEstoque() {
         e.imprimirEstoque();
+    }
+
+    public static void valorEstoque() {
+        
+    }
+
+    public static void valorVendido() {
+        
+    }
+
+    public static void valorGasto() {
+        
     }
 
 }
