@@ -146,13 +146,7 @@ public final class App {
         System.out.println("Quantos de cada produto você deseja comprar?");
         entrada.nextLine();
         int quantidade = entrada.nextInt();
-
-        List<Produto> produtosAbaixoDoEstoque;
-        produtosAbaixoDoEstoque = e.QuaisMenorQueMinimo();
-        for (int i = 0; i < produtosAbaixoDoEstoque.size(); i++) {
-            produtosAbaixoDoEstoque.get(i).addQuantidadeEstoque(quantidade);
-            e.setValorGasto(produtosAbaixoDoEstoque.get(i).getPrecoCusto());
-        }
+        e.comprar(quantidade);
     }
 
     public static void consultarProduto() {
