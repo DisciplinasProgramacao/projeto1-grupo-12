@@ -155,22 +155,13 @@ public final class App {
         entrada.nextLine();
         String pesquisa = entrada.nextLine();
 
-        e.consultarProduto(pesquisa);
+        Produto produtoConsultado = e.consultarProduto(pesquisa);
+        System.out.println(produtoConsultado.imprimirProduto());
     }
 
     public static void consultarEstoque() {
-        e.imprimirEstoque();
-    }
 
-    public static void valorEstoque() {
-        
-    }
-
-    public static void valorVendido() {
-        
-    }
-
-    public static void valorGasto() {
+        System.out.println(e.imprimirEstoque());
         
     }
 

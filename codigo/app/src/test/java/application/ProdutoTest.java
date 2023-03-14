@@ -3,7 +3,6 @@ package application;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -47,8 +46,8 @@ class ProdutoTest {
     @Test
     public void testCalcImposto() {
 
-        p.calcImposto(1.5);
-        assertEquals(18, p.getImposto(),0.5);
+        p.calcImposto();
+        assertEquals(2.16, p.getImposto(),0.5);
     }
 
     @Test
