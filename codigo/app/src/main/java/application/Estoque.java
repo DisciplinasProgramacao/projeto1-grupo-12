@@ -9,6 +9,14 @@ public class Estoque {
     private static double valorVendido = 0;
     private static double valorGasto = 0;
 
+    public double getValorVendido() {
+        return this.valorVendido;
+    }
+
+    public double getValorGasto() {
+        return this.valorGasto;
+    }
+
     public void setValorGasto(double valor) {
         valorGasto += valor;
     }
@@ -109,7 +117,7 @@ public class Estoque {
             if (produtosList.get(i).getDescricao().contains(pesquisa)) {
                 if((produtosList.get(i).getQuantidadeEstoque()) - quant >= 0)
                 produtosList.get(i).removeQuantidadeEstoque(quant);
-                setValorVendido(produtosList.get(i).getPrecoVenda());
+                setValorVendido(produtosList.get(i).getPrecoVenda()*quant);
             }
         }
     }

@@ -103,21 +103,21 @@ public final class App {
         System.out.println("Escolha o que quer fazer:");
         System.out.println("1 --> Consultar valor do estoque;");
         System.out.println("2 --> Consultar valor vendido;");
-        System.out.println("3 --> Consultar valor gasto para reposição;");
+        System.out.println("3 --> Consultar valor gasto em pedidos de reposição");
     
         x = entrada.nextInt();
         switch (x) {
             case 1:
-                valorEstoque();
+                System.out.println(e.calcularValorEstoque());
 
                 break;
 
             case 2:
-                valorVendido();
+                System.out.println(e.getValorVendido());
                 break;
 
             case 3:
-                valorGasto();
+                System.out.println(e.getValorGasto());
                 break;
 
             default:
