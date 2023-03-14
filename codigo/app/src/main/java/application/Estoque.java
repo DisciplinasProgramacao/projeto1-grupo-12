@@ -27,18 +27,30 @@ public class Estoque {
         return qtd;
     }
 
+    /**
+     *  adciona um novo produto na lista do estoque
+     * @param produto
+     */
     public void addEstoque(Produto produto) {
         if (!produtosList.contains(produto)) {
             produtosList.add(produto);
         }
     }
 
+    /**
+     * remove um produto da lista do estoque
+     * @param produto
+     */
     public void retirarEstoque(Produto produto) {
         if (produtosList.contains(produto)) {
             produtosList.remove(produto);
         }
     }
 
+    /**
+     * calcula e retorna o valor do estoque atual
+     * @return
+     */
     public double calcularValorEstoque() {
         double valorTotal = 0;
 
@@ -48,6 +60,10 @@ public class Estoque {
         return valorTotal;
     }
 
+    /**
+     * retorna uma lista de produtos que estão com a quantidade menor que o minimo preposto 
+     * @return
+     */
     public List<Produto> QuaisMenorQueMinimo() {
 
         List<Produto> produtosAbaixoDoEstoque = new ArrayList<>();
@@ -61,6 +77,7 @@ public class Estoque {
         return produtosAbaixoDoEstoque;
     }
 
+    
     public void imprimirEstoque() {
 
         for (int i = 0; i < produtosList.size(); i++) {
@@ -68,6 +85,10 @@ public class Estoque {
         }
     }
 
+    /**
+     * dados de um produto específico
+     * @param pesquisa
+     */
     public void consultarProduto(String pesquisa) {
 
         for (int i = 0; i < produtosList.size(); i++) {
@@ -77,11 +98,16 @@ public class Estoque {
         }
     }
 
+    /**
+     * retira certa quantidade no estoque do produto sugerido, se a quantidade total no final for maior ou igual a 0
+     * @param pesquisa
+     * @param quant
+     */
     public void vendaQuantProd(String pesquisa, int quant) {
 
         for (int i = 0; i < produtosList.size(); i++) {
             if (produtosList.get(i).getDescricao().contains(pesquisa)) {
-                if((produtosList.get(i).getQuantidadeEstoque()) - quant > 0)
+                if((produtosList.get(i).getQuantidadeEstoque()) - quant >= 0)
                 produtosList.get(i).removeQuantidadeEstoque(quant);
                 setValorVendido(produtosList.get(i).getPrecoVenda());
             }
