@@ -10,19 +10,23 @@ public class Estoque {
     private static double valorGasto = 0;
 
     public double getValorVendido() {
-        return this.valorVendido;
+        return valorVendido;
     }
 
     public double getValorGasto() {
-        return this.valorGasto;
+        return valorGasto;
     }
 
-    public void setValorGasto(double valor) {
-        valorGasto += valor;
+    private void setValorGasto(double valor) {
+        if((valor>0)) {
+            valorGasto += valor;
+        } 
     }
 
-    public void setValorVendido(double valor) {
-        valorVendido += valor;
+    private void setValorVendido(double valor) {
+        if((valor>0)){
+            valorVendido += valor;
+        }
     }
 
     public int getQuantidade() {
@@ -42,6 +46,7 @@ public class Estoque {
     public void addEstoque(Produto produto) {
         if (!produtosList.contains(produto)) {
             produtosList.add(produto);
+            this.setValorGasto(produto.valorNoEstoque());
         }
     }
 
@@ -86,24 +91,32 @@ public class Estoque {
     }
 
     
-    public void imprimirEstoque() {
+    public String imprimirEstoque() {
+
+        String produtosEstoque = "";
 
         for (int i = 0; i < produtosList.size(); i++) {
-            System.out.println("Produto " + i + ": " + produtosList.get(i).getDescricao());
+
+            produtosEstoque += "Produto " + i + ": " + produtosList.get(i).getDescricao() + "\n";
         }
+
+        return produtosEstoque;
     }
 
     /**
      * dados de um produto específico
      * @param pesquisa
      */
-    public void consultarProduto(String pesquisa) {
+    public Produto consultarProduto(String pesquisa) {
+
+        Produto produtoConsultado = new Produto();
 
         for (int i = 0; i < produtosList.size(); i++) {
             if (produtosList.get(i).getDescricao().contains(pesquisa)) {
-                produtosList.get(i).imprimirProduto();
+                produtoConsultado = produtosList.get(i);
             }
         }
+        return produtoConsultado;
     }
 
     /**
@@ -130,9 +143,13 @@ public class Estoque {
 
         List<Produto> produtosAbaixoDoEstoque;
         produtosAbaixoDoEstoque = QuaisMenorQueMinimo();
-        for (int i = 0; i < produtosAbaixoDoEstoque.size(); i++) {
-            produtosAbaixoDoEstoque.get(i).addQuantidadeEstoque(quantidade);
-            setValorGasto(produtosAbaixoDoEstoque.get(i).getPrecoCusto() * quantidade);
+
+        if(quantidade>0){
+            
+            for (int i = 0; i < produtosAbaixoDoEstoque.size(); i++) {
+                produtosAbaixoDoEstoque.get(i).addQuantidadeEstoque(quantidade);
+                setValorGasto(produtosAbaixoDoEstoque.get(i).getPrecoCusto() * quantidade);
+            }
         }
     }
 

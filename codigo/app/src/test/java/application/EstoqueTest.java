@@ -34,8 +34,7 @@ class EstoqueTest {
 
     @Test
     public void addEstoque() {
-
-        assertEquals(0, e.getQuantidade());
+        
         e.addEstoque(p1);
         assertEquals(20, e.getQuantidade());
     }

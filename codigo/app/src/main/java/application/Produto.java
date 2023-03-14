@@ -27,15 +27,13 @@ public class Produto {
     }
 
     public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+        if(descricao.length()>3){
+            this.descricao = descricao;
+        }
+    }  
 
     public double getImposto() {
         return imposto;
-    }
-
-    public void setImposto(double imposto) {
-        this.imposto = imposto;
     }
 
     public double getPrecoCusto() {
@@ -43,36 +41,35 @@ public class Produto {
     }
 
     public void setPrecoCusto(double precoCusto) {
-        this.precoCusto = precoCusto;
+        if(precoCusto > 0.01){
+            this.precoCusto = precoCusto;
+        }
     }
 
     public double getPrecoVenda() {
         return precoVenda;
     }
-
-    public void setPrecoVenda(double precoVenda) {
-        this.precoVenda = precoVenda;
-    }
-
+    
     public int getQuantidadeEstoque() {
         return quantidadeEstoque;
     }
-
-    public void addQuantidadeEstoque(int quantidade) {
-        this.quantidadeEstoque += quantidade;
-    }
-
-    public void removeQuantidadeEstoque(int quantidade) {
-        this.quantidadeEstoque -= quantidade;
-    }
-
+    
     public double getMargemLucro() {
         return margemLucro;
     }
 
-    public void setMargemLucro(double margemLucro) {
-        this.margemLucro = margemLucro;
+    public void addQuantidadeEstoque(int quantidade) {
+        if(quantidade > 0) {
+            this.quantidadeEstoque += quantidade;
+        }
     }
+
+    public void removeQuantidadeEstoque(int quantidade) {
+        if((quantidade>0) && (quantidade <= this.quantidadeEstoque)){
+            this.quantidadeEstoque -= quantidade;
+        }
+    }
+
 
     /**
      * calcula e retorna o preço de venda
@@ -92,7 +89,10 @@ public class Produto {
      */
     public double calcMargemLucro(double porcentLucro) {
 
-        this.margemLucro = porcentLucro * precoCusto;
+        if((porcentLucro>=0.3) && porcentLucro<= 0.8){
+            this.margemLucro = porcentLucro * precoCusto;
+        }
+       
         return margemLucro;
     }
 
@@ -101,9 +101,12 @@ public class Produto {
      * @param porcentImposto
      * @return
      */
-    public double calcImposto(double porcentImposto) {
+    public double calcImposto() {
+
+        double porcentImposto = 0.18;
 
         this.imposto = porcentImposto * (this.precoCusto + this.margemLucro);
+
         return imposto;
     }
 
@@ -119,12 +122,18 @@ public class Produto {
     /**
      * 
      */
-    public void imprimirProduto() {
-        System.out.println("Descrição: " + this.descricao);
-        System.out.println("Preço de Custo: " + this.precoCusto);
-        System.out.println("Preço de Venda: " + this.precoVenda);
-        System.out.println("Quantidade Estoque: " + this.quantidadeEstoque);
-        System.out.println("Margem de lucro: " + this.margemLucro);
+    public String imprimirProduto() {
+
+        String result = "";
+        
+        result += "Descrição: " + this.descricao + "\nPreço de Custo: " + this.precoCusto + "\nPreço de Venda: " + this.precoVenda + "\nQuantidade Estoque: " + this.quantidadeEstoque +
+        "\nMargem de lucro: " + this.margemLucro;
+
+        return result;
+    }
+
+    public double valorNoEstoque() {
+        return (this.precoCusto*this.quantidadeEstoque);
     }
 
 }
