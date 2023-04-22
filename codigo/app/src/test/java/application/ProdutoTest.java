@@ -29,6 +29,19 @@ class ProdutoTest {
         assertEquals(25, p.getQuantidadeEstoque());
     }
 
+    @Test //criado por João, para mostrar que não funciona.
+    public void deveCalcPrecoVenda(){
+        Produto p1 = new Produto("eu", 100, 0, 1000, 0.5);
+        assertEquals(177.0,p1.getPrecoVenda(),0.01);
+    }
+
+    @Test //criado por João: como saber que estava funcionando?
+    public void nãoPodeAdicionarNegativo(){
+        Produto p1 = new Produto("eu", 100, 0, 5, 0.5);
+        p1.addQuantidadeEstoque(-5);
+        assertEquals(5, p1.getQuantidadeEstoque());
+    }
+
     @Test
     public void testCalcPrecoVenda() {
 
